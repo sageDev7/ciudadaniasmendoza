@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="description" content="Estudio de Ciudadanías — Asesoramiento legal en ciudadanías, visados y homologación de títulos en Mendoza, Argentina. Atención presencial y remota.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Estudio de Ciudadanías — Mendoza, Argentina">
+<meta property="og:description" content="Asesoramiento legal en ciudadanías, visados y homologación de títulos. Atención presencial y remota.">
+<meta property="og:image" content="./og.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>Estudio de Ciudadanías — Mendoza, Argentina</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="canonical" href="https://www.ciudadaniasmendoza.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7/css/flag-icons.min.css">
+<link rel="stylesheet" href="./styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "Estudio de Ciudadanías",
+  "image": "https://www.ciudadaniasmendoza.com/og.png",
+  "url": "https://www.ciudadaniasmendoza.com/",
+  "telephone": "+5492613009093",
+  "email": "alam.estudiojuridico@hotmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Peatonal Sarmiento 199",
+    "addressLocality": "Mendoza",
+    "addressRegion": "Mendoza",
+    "addressCountry": "AR"
+  },
+  "areaServed": "Worldwide",
+  "openingHours": "Mo-Fr 11:00-16:00"
+}
+</script>
+<style>
+/* ── HERO ── */
+#hero{position:relative;height:100vh;height:100svh;display:flex;align-items:center;color:var(--white);overflow:hidden;
+  background:url('./hero-bg.jpg') center/cover no-repeat;
+}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(6,20,15,.94) 0%,rgba(8,32,23,.88) 34%,rgba(8,32,23,.55) 62%,rgba(8,32,23,.4) 100%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;position:relative;z-index:1;width:100%}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:9px 18px 9px 14px;font-size:.8rem;color:rgba(255,255,255,.85);margin-bottom:22px}
+.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--silver);flex-shrink:0}
+.hero-text h1{font-family:var(--fb);font-weight:800;font-style:normal;font-size:clamp(2rem,3.6vw,2.9rem);line-height:1.15;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.3)}
+.hero-text .p-lead{color:rgba(255,255,255,.8);max-width:460px;margin-top:18px}
+.hero-ctas{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
+
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center}
+
+/* tarjeta de servicios (acordeón) — ocupa la columna visual del hero */
+.hero-panel{position:relative;width:100%;max-width:420px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.hp-row{border-radius:9px;overflow:hidden;background:rgba(255,255,255,.03)}
+.hp-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;background:rgba(255,255,255,.06);border-radius:9px;color:var(--white);transition:background .2s,color .2s}
+.hp-row.selected .hp-head{background:var(--white);color:var(--green)}
+.hp-head .hp-text{font-weight:600;font-size:.94rem}
+.hp-head i.ti-chevron-down{transition:transform .25s var(--ease);font-size:15px}
+.hp-row.open .hp-head i.ti-chevron-down{transform:rotate(180deg)}
+.hp-body{max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}
+.hp-body a{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 20px;font-size:.88rem;color:rgba(255,255,255,.85);border-top:1px solid rgba(255,255,255,.08)}
+.hp-body a:hover{color:var(--white)}
+.hp-body a i{font-size:13px;opacity:.7}
+.hp-flag{width:1.35rem;height:1.02rem;border-radius:2px;background-size:cover;flex-shrink:0}
+.hp-body a.hp-single{position:relative;justify-content:center}
+.hp-body a.hp-single .hp-text{width:100%;text-align:center}
+.hp-body a.hp-single i.ti-arrow-right{position:absolute;right:20px}
+
+@media(max-width:1024px){
+  .hp-head{position:relative;justify-content:center}
+  .hp-head .hp-icon{position:absolute;left:18px}
+  .hp-head .hp-text{width:100%;text-align:center}
+  .hp-head i.ti-chevron-down{position:absolute;right:18px}
+  .hp-body a{position:relative;justify-content:center}
+  .hp-body a .hp-flag{position:absolute;left:20px}
+  .hp-body a .hp-text{width:100%;text-align:center;padding:0 20px}
+  .hp-body a i.ti-arrow-right{position:absolute;right:20px}
+}
+
+/* ── VALUE STRIP ── */
+#valores{background:var(--green);padding:0}
+.valores-row{display:grid;grid-template-columns:repeat(3,1fr)}
+.valor-item{padding:56px 40px;border-right:1px solid rgba(255,255,255,.15)}
+.valor-item:last-child{border-right:none}
+.valor-num{font-family:var(--fs);font-weight:600;font-style:italic;font-size:1.5rem;color:var(--silver-light);display:block;margin-bottom:14px}
+.valor-item h4{font-family:var(--fs);font-weight:600;font-size:1.14rem;color:#fff;margin-bottom:10px}
+.valor-item p{font-size:.94rem;color:rgba(255,255,255,.75);line-height:1.6}
+
+/* ── SERVICIOS: CIUDADANÍAS ── */
+#servicios{position:relative;padding:130px 0;overflow:hidden;background:url('./servicios-bg.jpg') center/cover no-repeat}
+#servicios::before{content:'';position:absolute;inset:0;background:var(--green);mix-blend-mode:color;opacity:.85;pointer-events:none}
+#servicios::after{content:'';position:absolute;inset:0;background:linear-gradient(170deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.55) 45%,rgba(0,0,0,.92) 100%);pointer-events:none}
+#servicios .wrap{position:relative;z-index:1}
+#servicios .eyebrow{color:var(--silver-light)}
+#servicios .eyebrow::before{background:var(--silver-light)}
+#servicios .h2{color:#fff}
+#servicios .h2 em{color:var(--silver-light)}
+#servicios .p-lead{color:rgba(255,255,255,.75)}
+.ciud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:80px}
+.ciud-card{position:relative;background:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:8px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;min-height:260px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease);overflow:hidden;color:#fff}
+.ciud-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(0,0,0,.3);background:rgba(255,255,255,.11)}
+.ciud-card.has-photo{background-size:cover;background-position:center}
+.ciud-card.has-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(200deg,rgba(6,42,30,.35) 0%,rgba(6,42,30,.82) 78%);z-index:0}
+.ciud-card::after{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(135deg,rgba(255,255,255,.32),rgba(255,255,255,.09) 60%,rgba(255,255,255,.24));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2}
+.ciud-card > *{position:relative;z-index:1}
+.ciud-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.ciud-card h3{font-family:var(--fs);font-weight:600;font-size:1.28rem;color:#fff}
+.ciud-card p{font-size:.94rem;color:rgba(255,255,255,.78);line-height:1.6;flex:1}
+.ciud-card .sello{border-color:rgba(255,255,255,.5);color:#fff}
+.ciud-card .link-arrow{color:var(--silver-light)}
+.ciud-icon-flat{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:var(--silver-light);font-size:24px}
+
+/* ── SERVICIOS: DOCUMENTACIÓN ── */
+.doc-head{max-width:700px;margin:0 auto 50px;text-align:center}
+.doc-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.doc-card{flex:0 1 340px;position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:8px;padding:32px 28px;display:flex;flex-direction:column;gap:14px;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease)}
+.doc-card:hover{transform:translateY(-4px);box-shadow:0 18px 34px rgba(0,0,0,.3);background:rgba(255,255,255,.11)}
+.doc-icon{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:var(--silver-light);font-size:24px}
+.doc-card h4{font-family:var(--fs);font-weight:600;font-size:1.08rem;color:#fff}
+.doc-card p{font-size:.92rem;color:rgba(255,255,255,.75);line-height:1.6}
+
+/* ── NOSOTRAS ── */
+#nosotras{position:relative;padding:90px 0 0;background:var(--cream);overflow:hidden}
+.nosotras-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+.nosotras-visual{display:flex;align-items:flex-end;justify-content:center;height:min(62vh,560px)}
+.nosotras-figure{height:100%;width:auto;max-width:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 26px 34px rgba(11,74,52,.28))}
+.nosotras-text{padding-bottom:30px}
+.nosotras-text .eyebrow{color:var(--silver-dark)}
+.nosotras-role{font-size:.86rem;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-bottom:18px}
+.nosotras-text p{color:var(--gray);font-size:1rem;line-height:1.7;margin-bottom:20px}
+.nosotras-divider{width:44px;height:1.5px;background:var(--silver);margin:30px 0}
+
+/* ── PROCESO ── */
+#proceso{position:relative;padding:130px 0;overflow:hidden;background:var(--green)}
+#proceso::before{content:'';position:absolute;inset:0;background:url('./proceso-bg.jpg') center 35%/cover no-repeat;filter:grayscale(100%);pointer-events:none}
+#proceso::after{content:'';position:absolute;inset:0;background:linear-gradient(170deg,rgba(6,32,23,.9) 0%,rgba(6,42,30,.86) 100%);pointer-events:none}
+#proceso .wrap{position:relative;z-index:1}
+#proceso .eyebrow{color:var(--silver-light)}
+#proceso .eyebrow::before{background:var(--silver-light)}
+#proceso .h2{color:#fff}
+#proceso .h2 em{color:var(--silver-light)}
+#proceso .steps-grid{background:rgba(255,255,255,.14)}
+#proceso .step-item{background:rgba(255,255,255,.07)}
+
+/* ── TESTIMONIOS (fondo fotográfico) ── */
+#testimonios{padding:130px 0;background:var(--white)}
+.test-grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center}
+.test-card{flex:1 1 320px;max-width:370px;background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:34px 32px;display:flex;flex-direction:column;gap:16px}
+.test-quote{font-size:.98rem;color:var(--ink);line-height:1.65;font-style:italic}
+.test-author{display:flex;align-items:center;gap:10px}
+.test-avatar{width:38px;height:38px;border-radius:50%;background:var(--green);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--fs);font-weight:600;font-size:.9rem;flex-shrink:0}
+.test-name{font-size:.88rem;font-weight:600;color:var(--green)}
+.test-tag{font-size:.78rem;color:var(--gray)}
+
+/* ── FAQ ── */
+#faq{padding:130px 0;background:var(--cream)}
+
+/* ── UBICACIÓN ── */
+#ubicacion{padding:130px 0;background:var(--white)}
+.ubi-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch}
+.ubi-info{display:flex;flex-direction:column;justify-content:flex-start;gap:22px}
+.ubi-item{display:flex;align-items:center;gap:16px}
+.ubi-icon{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 32% 28%,var(--green-light),var(--white) 75%);border:1px solid var(--line);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.ubi-item span{font-size:.98rem;color:var(--ink);line-height:1.5;overflow-wrap:anywhere}
+.mapa{width:100%;margin-top:60px;height:420px;border:1.5px solid var(--line);border-radius:3px;overflow:hidden}
+
+.contact-form-card{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:36px;margin-top:44px}
+.cf-head{margin-bottom:18px}
+.cf-head h3{font-family:var(--fs);font-weight:600;font-style:italic;font-size:1.3rem;color:var(--green)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label{font-family:var(--fb);font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--silver-dark)}
+.field input,.field textarea{border:1.5px solid var(--line);border-radius:6px;padding:11px 14px;font-family:var(--fb);font-size:.94rem;background:var(--white);color:var(--ink);outline:none;transition:border-color .2s}
+.field input::placeholder,.field textarea::placeholder{color:var(--gray)}
+.field textarea{min-height:80px;resize:vertical}
+.field input:focus,.field textarea:focus{border-color:var(--green)}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.form-btns .btn{flex:1 1 200px;justify-content:center}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1EBE59}
+.btn:disabled{opacity:.7;cursor:default}
+
+.form-modal{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s}
+.form-modal.open{opacity:1;pointer-events:auto}
+.form-modal-overlay{position:absolute;inset:0;background:rgba(6,42,30,.55)}
+.form-modal-card{position:relative;z-index:1;background:var(--white);border-radius:12px;padding:40px 36px 32px;max-width:380px;width:calc(100% - 48px);text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.25);transform:translateY(14px) scale(.97);transition:transform .25s}
+.form-modal.open .form-modal-card{transform:translateY(0) scale(1)}
+.form-modal-close{position:absolute;top:12px;right:14px;background:none;border:none;font-size:22px;line-height:1;color:var(--gray);cursor:pointer;padding:4px}
+.form-modal-icon{font-size:44px;margin-bottom:14px}
+.form-modal.success .form-modal-icon{color:var(--green)}
+.form-modal.error .form-modal-icon{color:#B23A3A}
+.form-modal-text{color:var(--ink);font-size:1rem;line-height:1.6;margin-bottom:22px}
+.form-modal-ok{width:100%}
+@media(prefers-reduced-motion:reduce){.form-modal,.form-modal-card{transition:none}}
+
+@media(max-width:1024px){
+  .contact-form-card{padding:32px 26px;margin-top:36px}
+}
+@media(max-width:768px){
+  .form-row{grid-template-columns:1fr}
+  .contact-form-card{padding:30px 22px}
+}
+.mapa iframe{width:100%;height:100%;border:0}
+
+@media(max-width:1024px){
+  #hero{height:auto;min-height:100vh;min-height:100svh;padding:150px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:8px;text-align:center}
+  .hero-badge{margin:0 auto 18px}
+  .hero-badge-extra{display:none}
+  .hero-text h1{font-size:clamp(1.9rem,7vw,2.4rem)}
+  .hero-text .p-lead{margin:14px auto 0}
+  .hero-ctas{flex-direction:column;align-items:center;margin-top:26px}
+  .hero-ctas .btn{width:100%;max-width:280px;justify-content:center}
+  .hero-visual{margin:32px auto 50px}
+  .valores-row{grid-template-columns:1fr}
+  .valor-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.15);text-align:center}
+  .valor-item:last-child{border-bottom:none}
+  .ciud-grid{grid-template-columns:1fr 1fr}
+  .nosotras-grid{grid-template-columns:1fr;gap:12px;text-align:center}
+  .nosotras-visual{height:min(46vh,340px);order:2}
+  .nosotras-figure{transform:translateX(26px)}
+  .nosotras-text{padding-bottom:60px;order:1}
+  .nosotras-text .eyebrow::before{display:none}
+  .nosotras-divider{margin-left:auto;margin-right:auto}
+  #proceso .step-item{align-items:center;text-align:center}
+  .ubi-grid{grid-template-columns:1fr;gap:36px}
+  .mapa{height:340px;margin-top:0}
+  .ubi-info{text-align:center}
+  .ubi-item{flex-direction:column;justify-content:center}
+}
+@media(max-width:768px){
+  .ciud-grid{grid-template-columns:1fr}
+  .ciud-card-top{justify-content:center;flex-direction:column;align-items:center;text-align:center}
+  .ciud-card{text-align:center;align-items:center}
+  .doc-card{text-align:center;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a href="tel:+5492613009093" class="topbar-item"><i class="ti ti-phone-filled"></i> +54 9 261 300-9093</a>
+    <a href="mailto:alam.estudiojuridico@hotmail.com" class="topbar-item hide-mobile"><i class="ti ti-mail-filled"></i> alam.estudiojuridico@hotmail.com</a>
+    <span class="topbar-item hide-tablet"><i class="ti ti-map-pin-filled"></i> Peatonal Sarmiento 199, Mendoza</span>
+    <span class="topbar-item hide-tablet"><i class="ti ti-clock-filled"></i> Lunes a Viernes de 11:00 a 16:00</span>
+  </div>
+</div>
+
+<div class="header-outer">
+  <header id="header">
+    <div class="hd-row">
+      <a href="./" class="logo">
+        <span class="logo-orbit"><svg class="logo-globe" viewBox="0 0 40 40" width="30" height="30" fill="none"><circle cx="20" cy="20" r="16.5" stroke="currentColor" stroke-width="1.6"/><ellipse cx="20" cy="20" rx="7" ry="16.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 20h32M6.5 12.5h27M6.5 27.5h27" stroke="currentColor" stroke-width="1"/></svg><span class="logo-ring"><span class="logo-plane"><i class="ti ti-plane"></i></span></span></span>
+        <span class="logo-word">Estudio de<b>Ciudadanías</b></span>
+      </a>
+      <nav class="hd-nav">
+        <a href="#servicios">Servicios</a>
+        <div class="hd-dropdown">
+          <a href="ciudadania-italiana.html">Ciudadanías <i class="ti ti-chevron-down" style="font-size:13px"></i></a>
+          <div class="hd-dropdown-menu">
+            <div class="hd-dropdown-inner">
+              <a href="ciudadania-italiana.html"><span class="fi fi-it"></span> Ciudadanía Italiana</a>
+              <a href="ciudadania-polaca.html"><span class="fi fi-pl"></span> Ciudadanía Polaca</a>
+              <a href="ciudadania-croata.html"><span class="fi fi-hr"></span> Ciudadanía Croata</a>
+              <a href="ciudadania-argentina.html"><span class="fi fi-ar"></span> Ciudadanía Argentina</a>
+            </div>
+          </div>
+        </div>
+        <a href="#nosotras">Sobre mí</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="hd-cta">
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" class="btn btn-primary">Escríbenos</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+<div class="mob-overlay" id="mobOverlay"></div>
+<nav class="mob-nav" id="mobNav">
+  <div class="mob-nav-logo">
+    <svg class="logo-globe" viewBox="0 0 40 40" width="34" height="34" fill="none"><circle cx="20" cy="20" r="16.5" stroke="currentColor" stroke-width="1.6"/><ellipse cx="20" cy="20" rx="7" ry="16.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 20h32M6.5 12.5h27M6.5 27.5h27" stroke="currentColor" stroke-width="1"/></svg>
+    <span class="logo-word">Estudio de<b>Ciudadanías</b></span>
+  </div>
+  <div class="mob-nav-divider"></div>
+  <div class="mob-nav-links">
+    <a href="#servicios">Servicios</a>
+    <div class="mob-dropdown" id="mobDropdown">
+      <button type="button" class="mob-dropdown-trigger">Ciudadanías <i class="ti ti-chevron-down"></i></button>
+      <div class="mob-dropdown-menu">
+        <a href="ciudadania-italiana.html"><span class="fi fi-it"></span> Ciudadanía Italiana</a>
+        <a href="ciudadania-polaca.html"><span class="fi fi-pl"></span> Ciudadanía Polaca</a>
+        <a href="ciudadania-croata.html"><span class="fi fi-hr"></span> Ciudadanía Croata</a>
+        <a href="ciudadania-argentina.html"><span class="fi fi-ar"></span> Ciudadanía Argentina</a>
+      </div>
+    </div>
+    <a href="#nosotras">Sobre mí</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" class="btn btn-primary">Escríbenos</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text reveal">
+      <div class="hero-badge"><span class="dot"></span> Italia · Polonia · Croacia · Argentina<span class="hero-badge-extra"> — y más destinos</span></div>
+      <h1>Tu ciudadanía y pasaporte,<br>sin&nbsp;fronteras.</h1>
+      <p class="p-lead">Asesoramiento legal en ciudadanías, visados y homologación de títulos. Presencial en Mendoza o remoto desde cualquier parte del mundo.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" class="btn btn-primary">Escríbenos por WhatsApp</a>
+        <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+      </div>
+    </div>
+    <div class="reveal hero-visual">
+      <div class="hero-panel" id="heroPanel">
+        <div class="hp-row selected">
+          <button type="button" class="hp-head">
+            <i class="ti ti-world hp-icon" style="font-size:17px"></i>
+            <span class="hp-text">Ciudadanías</span>
+            <i class="ti ti-chevron-down"></i>
+          </button>
+          <div class="hp-body">
+            <a href="ciudadania-italiana.html"><span class="hp-flag fi fi-it"></span><span class="hp-text">Ciudadanía Italiana</span><i class="ti ti-arrow-right"></i></a>
+            <a href="ciudadania-polaca.html"><span class="hp-flag fi fi-pl"></span><span class="hp-text">Ciudadanía Polaca</span><i class="ti ti-arrow-right"></i></a>
+            <a href="ciudadania-croata.html"><span class="hp-flag fi fi-hr"></span><span class="hp-text">Ciudadanía Croata</span><i class="ti ti-arrow-right"></i></a>
+            <a href="ciudadania-argentina.html"><span class="hp-flag fi fi-ar"></span><span class="hp-text">Ciudadanía Argentina</span><i class="ti ti-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hp-row">
+          <button type="button" class="hp-head">
+            <i class="ti ti-e-passport hp-icon" style="font-size:17px"></i>
+            <span class="hp-text">Pasaportes</span>
+            <i class="ti ti-chevron-down"></i>
+          </button>
+          <div class="hp-body">
+            <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20pasaportes." target="_blank" rel="noopener" class="hp-single"><span class="hp-text">Gestión y renovación</span><i class="ti ti-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hp-row">
+          <button type="button" class="hp-head">
+            <i class="ti ti-writing hp-icon" style="font-size:17px"></i>
+            <span class="hp-text">Rectificación de Actas</span>
+            <i class="ti ti-chevron-down"></i>
+          </button>
+          <div class="hp-body">
+            <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20rectificaci%C3%B3n%20de%20actas." target="_blank" rel="noopener" class="hp-single"><span class="hp-text">Errores en nombres, fechas o lugares</span><i class="ti ti-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hp-row">
+          <button type="button" class="hp-head">
+            <i class="ti ti-school hp-icon" style="font-size:17px"></i>
+            <span class="hp-text">Homologación de Títulos</span>
+            <i class="ti ti-chevron-down"></i>
+          </button>
+          <div class="hp-body">
+            <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20homologaci%C3%B3n%20de%20t%C3%ADtulos." target="_blank" rel="noopener" class="hp-single"><span class="hp-text">Convalidación de títulos extranjeros</span><i class="ti ti-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section id="valores">
+  <div class="wrap valores-row">
+    <div class="valor-item reveal">
+      <span class="valor-num">01</span>
+      <h4>Acompañamiento integral</h4>
+      <p>Te guiamos en cada etapa del proceso, desde la evaluación inicial hasta la resolución final.</p>
+    </div>
+    <div class="valor-item reveal">
+      <span class="valor-num">02</span>
+      <h4>Estrategias personalizadas</h4>
+      <p>Cada caso se analiza de forma individual para definir el camino legal más favorable.</p>
+    </div>
+    <div class="valor-item reveal">
+      <span class="valor-num">03</span>
+      <h4>Gestión internacional</h4>
+      <p>Trabajamos con consulados, archivos y registros en Argentina, Italia y España.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS: CIUDADANÍAS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2 class="h2">Ciudadanías y trámites&nbsp;<em>internacionales</em>.</h2>
+    </div>
+    <div class="ciud-grid reveal">
+      <div class="ciud-card has-photo" style="background-image:url('./italia-bg.jpg')">
+        <div class="ciud-card-top">
+          <h3>Ciudadanía Italiana</h3>
+          <span class="sello"><span class="fi fi-it"></span></span>
+        </div>
+        <p>Si eres hijo o nieto de ciudadanos italianos, tienes derecho a solicitar la ciudadanía italiana por descendencia.</p>
+        <a href="ciudadania-italiana.html" class="link-arrow">Ver proceso completo <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="ciud-card has-photo" style="background-image:url('./polonia-bg.jpg')">
+        <div class="ciud-card-top">
+          <h3>Ciudadanía Polaca</h3>
+          <span class="sello"><span class="fi fi-pl"></span></span>
+        </div>
+        <p>Asesoramiento en trámites de ciudadanía polaca por descendencia, ante las autoridades consulares correspondientes.</p>
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20ciudadan%C3%ADa%20polaca." target="_blank" rel="noopener" class="link-arrow">Consultar <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="ciud-card has-photo" style="background-image:url('./croacia-bg.jpg')">
+        <div class="ciud-card-top">
+          <h3>Ciudadanía Croata</h3>
+          <span class="sello"><span class="fi fi-hr"></span></span>
+        </div>
+        <p>Gestión de ciudadanía croata por descendencia, incluyendo la recopilación de la documentación necesaria.</p>
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20ciudadan%C3%ADa%20croata." target="_blank" rel="noopener" class="link-arrow">Consultar <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="ciud-card has-photo" style="background-image:url('./argentina-bg.jpg')">
+        <div class="ciud-card-top">
+          <h3>Ciudadanía Argentina</h3>
+          <span class="sello"><span class="fi fi-ar"></span></span>
+        </div>
+        <p>Asesoramiento en naturalización y trámites de ciudadanía argentina para extranjeros residentes.</p>
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20ciudadan%C3%ADa%20argentina." target="_blank" rel="noopener" class="link-arrow">Consultar <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="ciud-card">
+        <div class="ciud-icon-flat"><i class="ti ti-e-passport"></i></div>
+        <h3>Pasaportes</h3>
+        <p>Gestión y renovación de pasaportes, incluyendo pasaportes de países de la Unión Europea.</p>
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20pasaportes." target="_blank" rel="noopener" class="link-arrow">Consultar <i class="ti ti-arrow-right"></i></a>
+      </div>
+      <div class="ciud-card">
+        <div class="ciud-icon-flat"><i class="ti ti-school"></i></div>
+        <h3>Homologación de Títulos</h3>
+        <p>Homologación y convalidación de títulos profesionales extranjeros ante las autoridades argentinas.</p>
+        <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20consultar%20sobre%20homologaci%C3%B3n%20de%20t%C3%ADtulos." target="_blank" rel="noopener" class="link-arrow">Consultar <i class="ti ti-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- SERVICIOS: DOCUMENTACIÓN -->
+    <div class="doc-head reveal">
+      <span class="eyebrow">Servicios de documentación</span>
+      <h2 class="h2">El respaldo detrás de cada&nbsp;<em>trámite</em>.</h2>
+    </div>
+    <div class="doc-grid reveal">
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-message-circle"></i></div>
+        <h4>Asesorías Personalizadas</h4>
+        <p>Evaluación detallada y profesional de cada caso mediante una asesoría estratégica, para ofrecer claridad sobre las opciones legales más favorables y los pasos concretos a seguir.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-folder-check"></i></div>
+        <h4>Revisión de Carpetas y Documentación</h4>
+        <p>Análisis profesional y objetivo de toda la documentación para verificar que cumpla con los requisitos exigidos por los consulados correspondientes.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-world"></i></div>
+        <h4>Gestiones Internacionales</h4>
+        <p>Asesoramiento integral en trámites de visados, obtención de ciudadanías y homologaciones de títulos, acompañando cada etapa del proceso.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-file-search"></i></div>
+        <h4>Búsqueda de Actas en Italia</h4>
+        <p>Búsqueda ágil y profesional de actas en Comunas y Parroquias italianas, abarcando registros civiles y eclesiásticos. Incluye investigación genealógica cuando falta información del antepasado.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-file-search"></i></div>
+        <h4>Búsqueda de Actas en España</h4>
+        <p>Localización de actas civiles y eclesiásticas en Archivos Históricos, Registros Civiles y Diócesis de toda España, para trámites legales, genealogía y ciudadanía.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-file-search"></i></div>
+        <h4>Búsqueda de Actas en Mendoza</h4>
+        <p>Gestión de partidas y actas de la Provincia de Mendoza, incluyendo el desarchivo y recuperación de documentos ya no disponibles por el paso del tiempo.</p>
+      </div>
+      <div class="doc-card">
+        <div class="doc-icon"><i class="ti ti-writing"></i></div>
+        <h4>Rectificación de Actas</h4>
+        <p>Corrección de errores en nombres, fechas o lugares de nacimiento, por vía administrativa o judicial, para que tus actas queden listas para cualquier trámite legal o consular.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTRAS -->
+<section id="nosotras">
+  <div class="wrap nosotras-grid">
+    <div class="nosotras-visual reveal">
+      <img src="./mayra-cutout.png" alt="Dra. Mayra Alam" class="nosotras-figure">
+    </div>
+    <div class="nosotras-text reveal">
+      <span class="eyebrow">Dra. Mayra Alam</span>
+      <p class="nosotras-role">Fundadora</p>
+      <p>Abogada especialista en movilidad internacional, documentaciones internacionales, homologación y convalidación de títulos extranjeros.</p>
+      <div class="nosotras-divider"></div>
+      <h3 style="font-family:var(--fs);font-weight:600;font-size:1.2rem;color:var(--green);margin-bottom:14px">El Estudio</h3>
+      <p>Estudio jurídico internacional con sede en la ciudad de Mendoza, Argentina. Brinda asesoramiento y representación estratégica, tanto de forma presencial como remota, para acompañar clientes de diferentes partes del mundo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS (ilustrativos — reemplazar por reales antes de publicar con la clienta) -->
+<section id="testimonios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Testimonios</span>
+      <h2 class="h2">Casos que ya&nbsp;<em>resolvimos</em>.</h2>
+    </div>
+    <div class="test-grid reveal">
+      <div class="test-card">
+        <p class="test-quote">"Pude tramitar mi ciudadanía italiana sin viajar a Italia. Un proceso claro en cada etapa, con respuestas rápidas ante cualquier duda."</p>
+        <div class="test-author">
+          <div class="test-avatar">VR</div>
+          <div>
+            <p class="test-name">Valentina R.</p>
+            <p class="test-tag">Ciudadanía Italiana</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"Resolvieron un error en mis actas que otro gestor no había podido solucionar. Profesionalismo y comunicación constante."</p>
+        <div class="test-author">
+          <div class="test-avatar">FD</div>
+          <div>
+            <p class="test-name">Franco D.</p>
+            <p class="test-tag">Rectificación de Actas</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"Atención personalizada de principio a fin. Recomiendo el estudio para trámites de homologación de títulos."</p>
+        <div class="test-author">
+          <div class="test-avatar">CS</div>
+          <div>
+            <p class="test-name">Camila S.</p>
+            <p class="test-tag">Homologación de Títulos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2 class="h2">Un proceso claro, paso a&nbsp;<em>paso</em>.</h2>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step-item">
+        <span class="step-num">01</span>
+        <h4>Evaluación del caso</h4>
+        <p>Analizamos tu situación y verificamos que cumplas los requisitos del trámite.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">02</span>
+        <h4>Recolección de documentación</h4>
+        <p>Gestionamos actas, partidas y toda la documentación necesaria.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">03</span>
+        <h4>Presentación</h4>
+        <p>Realizamos la presentación ante el consulado o la autoridad correspondiente.</p>
+      </div>
+      <div class="step-item">
+        <span class="step-num">04</span>
+        <h4>Seguimiento</h4>
+        <p>Acompañamos el proceso de forma constante hasta su resolución final.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="h2">Dudas comunes sobre el&nbsp;<em>trámite</em>.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span class="faq-q-text">¿Puedo hacer el trámite sin viajar?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a-wrap"><p class="faq-a">Sí, gran parte del proceso puede gestionarse de forma remota, incluyendo la recolección de actas y la presentación de la documentación.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span class="faq-q-text">¿Qué pasa si mis actas argentinas tienen errores?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a-wrap"><p class="faq-a">Te asistimos con las rectificaciones necesarias, por vía administrativa o judicial, para que la documentación sea aceptada sin inconvenientes en el trámite.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span class="faq-q-text">¿Qué documentación necesito para empezar?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a-wrap"><p class="faq-a">Depende del tipo de trámite. En la primera consulta evaluamos tu caso y te indicamos qué documentación reunir.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span class="faq-q-text">¿Atienden casos desde el exterior?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a-wrap"><p class="faq-a">Sí, brindamos asesoramiento y representación tanto presencial como remota para clientes de distintas partes del mundo.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span class="faq-q-text">¿Cuánto tiempo demora un trámite de ciudadanía?</span><span class="faq-icon">+</span></button>
+        <div class="faq-a-wrap"><p class="faq-a">Los plazos varían según el país, el consulado y la complejidad de cada caso. Lo evaluamos en la consulta inicial.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion">
+  <div class="wrap ubi-grid">
+    <div class="ubi-info reveal">
+      <span class="eyebrow">Ubicación</span>
+      <h2 class="h2" style="margin-bottom:26px">Visitanos en&nbsp;<em>Mendoza</em>.</h2>
+      <div class="ubi-item"><div class="ubi-icon"><i class="ti ti-map-pin-filled"></i></div><span>Peatonal Sarmiento 199, Mendoza Capital</span></div>
+      <div class="ubi-item"><div class="ubi-icon"><i class="ti ti-clock-filled"></i></div><span>Lunes a Viernes de 11:00 a 16:00 hs</span></div>
+      <div class="ubi-item"><div class="ubi-icon"><i class="fa-brands fa-whatsapp"></i></div><span>+54 9 261 300-9093</span></div>
+      <div class="ubi-item"><div class="ubi-icon"><i class="ti ti-mail-filled"></i></div><span>alam.estudiojuridico@hotmail.com</span></div>
+    </div>
+    <div class="contact-form-card reveal">
+      <div class="cf-head">
+        <h3>Envianos tu consulta</h3>
+      </div>
+      <form id="contactForm" action="contacto.php" method="post" novalidate>
+        <div class="field hp-field" aria-hidden="true">
+          <label for="website">Dejar en blanco</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono">
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="mensaje">Contanos tu caso</label>
+          <textarea id="mensaje" name="mensaje" required></textarea>
+        </div>
+        <div class="form-btns">
+          <button type="submit" class="btn btn-primary" id="submitEmail">Enviar por Email</button>
+          <button type="button" class="btn btn-wa" id="submitWa">Enviar por WhatsApp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="mapa reveal">
+      <iframe src="https://www.google.com/maps?q=Peatonal+Sarmiento+199,+Mendoza,+Argentina&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del estudio en Mendoza"></iframe>
+    </div>
+  </div>
+
+  <div id="formModal" class="form-modal" aria-hidden="true">
+    <div class="form-modal-overlay" data-close></div>
+    <div class="form-modal-card" role="alertdialog" aria-modal="true" aria-labelledby="formModalText">
+      <button type="button" class="form-modal-close" data-close aria-label="Cerrar">&times;</button>
+      <div class="form-modal-icon"><i class="ti ti-circle-check"></i></div>
+      <p id="formModalText" class="form-modal-text"></p>
+      <button type="button" class="btn btn-primary form-modal-ok" data-close>Entendido</button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="wrap cta-inner reveal">
+    <span class="eyebrow">Estudio de Ciudadanías</span>
+    <h2 class="h2">Conversemos sobre tu&nbsp;<em>caso</em>.</h2>
+    <p class="p-lead">Escríbenos por WhatsApp y contanos qué trámite necesitás — te respondemos a la brevedad.</p>
+    <a id="contacto" href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" class="btn btn-primary">Escríbenos por WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-logo">
+        <a href="./" class="logo">
+          <svg class="logo-globe" viewBox="0 0 40 40" width="36" height="36" fill="none"><circle cx="20" cy="20" r="16.5" stroke="currentColor" stroke-width="1.6"/><ellipse cx="20" cy="20" rx="7" ry="16.5" stroke="currentColor" stroke-width="1.2"/><path d="M4 20h32M6.5 12.5h27M6.5 27.5h27" stroke="currentColor" stroke-width="1"/></svg>
+          <span class="logo-word">Estudio de<b>Ciudadanías</b></span>
+        </a>
+        <p class="f-tagline">Asesoramiento legal en ciudadanías, visados y homologación de títulos, en Mendoza y para clientes de todo el mundo.</p>
+      </div>
+      <div class="f-col">
+        <h4>Servicios</h4>
+        <a href="ciudadania-italiana.html">Ciudadanía Italiana</a>
+        <a href="https://wa.me/5492613009093">Ciudadanía Polaca</a>
+        <a href="https://wa.me/5492613009093">Ciudadanía Croata</a>
+        <a href="https://wa.me/5492613009093">Ciudadanía Argentina</a>
+        <a href="https://wa.me/5492613009093">Pasaportes</a>
+        <a href="https://wa.me/5492613009093">Homologación de Títulos</a>
+      </div>
+      <div class="f-col">
+        <h4>Contacto</h4>
+        <a href="https://wa.me/5492613009093" target="_blank" rel="noopener">+54 9 261 300-9093</a>
+        <a href="mailto:alam.estudiojuridico@hotmail.com">alam.estudiojuridico@hotmail.com</a>
+        <a href="https://www.google.com/maps?q=Peatonal+Sarmiento+199,+Mendoza,+Argentina" target="_blank" rel="noopener">Peatonal Sarmiento 199, Mendoza</a>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div class="f-bottom-row">
+        <p>&copy; 2026 Estudio de Ciudadanías. Todos los derechos reservados.</p>
+        <p>Diseño y desarrollo — <a href="https://instagram.com/sageeDev" target="_blank" rel="noopener">@sageeDev</a></p>
+        <p><a href="privacidad.html">Política de Privacidad</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="fab-wrap" id="fabWrap">
+  <button type="button" class="fab-top" id="fabTop" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <i class="ti ti-chevron-up"></i>
+  </button>
+  <a href="https://wa.me/5492613009093?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" class="fab-wa" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.getElementById('header');
+  const headerOuter = document.querySelector('.header-outer');
+  const topbar = document.querySelector('.topbar');
+  const hamburgerBtn = document.getElementById('hamburger');
+  const fabWrap = document.getElementById('fabWrap');
+  const siteFooter = document.querySelector('footer');
+  let footerVisible = false;
+  function updateFloats() {
+    const y = window.scrollY;
+    header.classList.toggle('sc', y > 20);
+    if (hamburgerBtn) hamburgerBtn.classList.toggle('sc', y > 20);
+    if (topbar) topbar.classList.toggle('hidden', y > 20);
+    if (headerOuter) headerOuter.classList.toggle('docked', y > 20);
+    fabWrap.classList.toggle('visible', y > window.innerHeight * 0.6 && !footerVisible);
+  }
+  window.addEventListener('scroll', updateFloats, { passive: true });
+  updateFloats();
+  if (siteFooter && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { footerVisible = e.isIntersecting; });
+      updateFloats();
+    }, { threshold: 0 }).observe(siteFooter);
+  }
+
+  const hamburger = document.getElementById('hamburger');
+  const mobNav = document.getElementById('mobNav');
+  const mobOverlay = document.getElementById('mobOverlay');
+  function openNav() { mobNav.classList.add('open'); mobOverlay.classList.add('open'); hamburger.classList.add('is-open'); }
+  function closeNav() { mobNav.classList.remove('open'); mobOverlay.classList.remove('open'); hamburger.classList.remove('is-open'); }
+  hamburger.addEventListener('click', () => mobNav.classList.contains('open') ? closeNav() : openNav());
+  mobOverlay.addEventListener('click', closeNav);
+  mobNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+  const mobDropdown = document.getElementById('mobDropdown');
+  if (mobDropdown) {
+    const mobTrigger = mobDropdown.querySelector('.mob-dropdown-trigger');
+    const mobMenu = mobDropdown.querySelector('.mob-dropdown-menu');
+    mobTrigger.addEventListener('click', function () {
+      const isOpen = mobDropdown.classList.toggle('open');
+      mobMenu.style.maxHeight = isOpen ? mobMenu.scrollHeight + 'px' : '0px';
+    });
+  }
+
+  document.querySelectorAll('.hp-row').forEach(function (row) {
+    const head = row.querySelector('.hp-head');
+    const body = row.querySelector('.hp-body');
+    head.addEventListener('click', function () {
+      const isOpen = row.classList.contains('open');
+      document.querySelectorAll('.hp-row.open').forEach(function (openRow) {
+        openRow.classList.remove('open');
+        openRow.querySelector('.hp-body').style.maxHeight = '0px';
+      });
+      document.querySelectorAll('.hp-row.selected').forEach(function (selRow) {
+        selRow.classList.remove('selected');
+      });
+      row.classList.add('selected');
+      if (!isOpen) {
+        row.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    const btn = item.querySelector('.faq-q');
+    const wrap = item.querySelector('.faq-a-wrap');
+    btn.addEventListener('click', function () {
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+      wrap.style.maxHeight = isOpen ? wrap.scrollHeight + 'px' : '0px';
+    });
+  });
+  window.addEventListener('resize', function () {
+    document.querySelectorAll('.faq-item.open .faq-a-wrap').forEach(function (wrap) {
+      wrap.style.maxHeight = wrap.scrollHeight + 'px';
+    });
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    const modal = document.getElementById('formModal');
+    const modalText = document.getElementById('formModalText');
+    const modalIcon = modal.querySelector('.form-modal-icon i');
+    const submitBtn = document.getElementById('submitEmail');
+    const waBtn = document.getElementById('submitWa');
+    const submitLabel = submitBtn.textContent;
+
+    function openModal(kind, text) {
+      modal.classList.remove('success', 'error');
+      modal.classList.add(kind, 'open');
+      modal.setAttribute('aria-hidden', 'false');
+      modalText.textContent = text;
+      modalIcon.className = kind === 'success' ? 'ti ti-circle-check' : 'ti ti-alert-circle';
+    }
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+    modal.querySelectorAll('[data-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+    });
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(function (res) { return res.json().catch(function () { return { success: false }; }); })
+        .then(function (data) {
+          if (data.success) {
+            openModal('success', '¡Listo! Recibimos tu consulta, te respondemos a la brevedad.');
+            contactForm.reset();
+          } else {
+            openModal('error', 'No pudimos enviar tu consulta. Probá de nuevo o escribinos directo por WhatsApp.');
+          }
+        })
+        .catch(function () {
+          openModal('error', 'No pudimos enviar tu consulta. Probá de nuevo o escribinos directo por WhatsApp.');
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitLabel;
+        });
+    });
+
+    waBtn.addEventListener('click', function () {
+      if (!contactForm.reportValidity()) return;
+      const nombre = document.getElementById('nombre').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      let texto = 'Hola, mi nombre es ' + nombre + '.';
+      if (telefono) texto += ' Mi teléfono es ' + telefono + '.';
+      texto += ' Mi email es ' + email + '. ' + mensaje;
+      window.open('https://wa.me/5492613009093?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+    });
+  }
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
+});
+</script>
+</body>
+</html>

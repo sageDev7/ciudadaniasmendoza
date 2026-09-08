@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="robots" content="noindex">
+<title>Página no encontrada — Estudio de Ciudadanías</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:only light}
+a{text-decoration:none;color:inherit}
+:root{
+  --green:#0B4A34;--green-dark:#062A1E;--cream:#E5E7E3;--white:#FFFFFF;--silver-light:#EDEFEE;
+  --fs:'Newsreader',serif;--fb:'Inter',sans-serif;--ease:cubic-bezier(.4,0,.2,1);
+}
+body{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--green-dark);color:var(--white);font-family:var(--fb);padding:40px 24px;
+}
+.wrap404{max-width:520px}
+.eyebrow{font-family:var(--fb);font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);display:inline-flex;align-items:center;gap:10px;margin-bottom:24px}
+.eyebrow::before{content:'';width:24px;height:1.5px;background:rgba(255,255,255,.5)}
+.code{font-family:var(--fs);font-style:italic;font-weight:600;font-size:clamp(4rem,12vw,7rem);line-height:1;color:var(--white);margin-bottom:16px}
+h1{font-family:var(--fs);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);line-height:1.3;margin-bottom:18px}
+p{font-size:1.02rem;color:rgba(255,255,255,.75);line-height:1.7;margin-bottom:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;font-family:var(--fb);font-weight:600;font-size:.92rem;
+  padding:16px 32px;border-radius:100px;background:var(--white);color:var(--green);transition:background .2s,transform .18s var(--ease);
+}
+.btn:hover{background:var(--silver-light);transform:translateY(-1px)}
+</style>
+</head>
+<body>
+  <div class="wrap404">
+    <span class="eyebrow">Estudio de Ciudadanías</span>
+    <p class="code">404</p>
+    <h1>Esta página no existe o fue movida.</h1>
+    <p>Puede que el enlace esté roto o que la dirección haya cambiado. Volvé al inicio para seguir navegando.</p>
+    <a href="./" class="btn">Volver al inicio</a>
+  </div>
+</body>
+</html>
