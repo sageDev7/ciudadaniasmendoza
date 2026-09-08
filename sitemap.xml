@@ -11,6 +11,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.ciudadaniasmendoza.com/ciudadania-polaca.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ciudadaniasmendoza.com/ciudadania-croata.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ciudadaniasmendoza.com/ciudadania-argentina.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.ciudadaniasmendoza.com/privacidad.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
